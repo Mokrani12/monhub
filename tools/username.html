@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur de pseudo — MonHub</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">← Retour</a>
+    <h1>🎲 Générateur de pseudo</h1>
+    <label for="base">Mot de base</label>
+    <input id="base" type="text" placeholder="ex : wolf" value="wolf" />
+    <button id="gen">Générer 10 pseudos</button>
+    <div class="result" id="out"></div>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const suf = ["x","_off","_yt","_live","_fr","_pro","_07","_99","__","officiel"];
+    const pre = ["the","mr","real","best","pro","x"];
+    $("gen").addEventListener("click", () => {
+      const b = ($("base").value.trim() || "user").toLowerCase();
+      const out = [];
+      for (let i = 0; i < 10; i++) {
+        const r = Math.random();
+        const s = suf[Math.floor(Math.random() * suf.length)];
+        const p = r > 0.5 ? pre[Math.floor(Math.random() * pre.length)] : "";
+        const n = Math.floor(Math.random() * 999);
+        out.push((p + b + s + (r > 0.7 ? n : "")));
+      }
+      $("out").textContent = out.join("\n");
+    });
+  </script>
+</body>
+</html>
