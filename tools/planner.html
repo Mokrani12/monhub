@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planificateur de contenu — MonHub Premium</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../premium.html">← Retour Premium</a>
+    <h1>🗓️ Planificateur de contenu</h1>
+    <label for="topic">Thème de la semaine</label>
+    <input id="topic" type="text" value="productivité" />
+    <button id="gen">Générer le plan 7 jours</button>
+    <div class="result" id="out"></div>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const days = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"];
+    const formats = ["Reel","Post","Story","Tuto","Live","Carrousel","Q&A"];
+    $("gen").addEventListener("click", () => {
+      const t = $("topic").value.trim() || "votre sujet";
+      const plan = days.map((d, i) => `${d} : ${formats[i]} sur "${t}"`).join("\n");
+      $("out").textContent = plan;
+    });
+  </script>
+</body>
+</html>

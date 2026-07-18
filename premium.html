@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MonHub Premium</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">← Retour</a>
+    <h1>⭐ MonHub Premium</h1>
+    <p style="color:var(--muted)">Outils réservés aux membres. Entrez votre code d'accès.</p>
+
+    <label for="code">Code d'accès</label>
+    <input id="code" type="text" placeholder="PREMIUM-XXXX" />
+    <button id="unlock">Débloquer</button>
+    <p id="msg" class="result" style="display:none"></p>
+
+    <div id="premium" style="display:none; margin-top:24px;">
+      <h2>Outils Premium</h2>
+      <div class="tool-grid">
+        <a class="tool-card" href="../tools/analyzer.html">📊 Analyseur de trafic</a>
+        <a class="tool-card" href="../tools/planner.html">🗓️ Planificateur de contenu</a>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/premium.js"></script>
+</body>
+</html>

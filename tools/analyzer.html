@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyseur de trafic — MonHub Premium</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../premium.html">← Retour Premium</a>
+    <h1>📊 Analyseur de trafic</h1>
+    <label for="visits">Visites ce mois-ci</label>
+    <input id="visits" type="number" value="1000" />
+    <label for="conv">Taux de conversion (%)</label>
+    <input id="conv" type="number" value="2" />
+    <label for="value">Valeur par conversion (€)</label>
+    <input id="value" type="number" value="5" />
+    <button id="gen">Analyser</button>
+    <div class="result" id="out"></div>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $("gen").addEventListener("click", () => {
+      const v = +$("visits").value || 0;
+      const c = (+$("conv").value || 0) / 100;
+      const val = +$("value").value || 0;
+      const conv = Math.round(v * c);
+      const rev = (conv * val).toFixed(2);
+      $("out").textContent = `Conversions estimées : ${conv}\nRevenu estimé : ${rev} €`;
+    });
+  </script>
+</body>
+</html>
