@@ -1,14 +1,31 @@
-// Éditez cette liste pour ajouter vos propres liens.
+// REMPLACEZ les parties EN MAJUSCULES par vos propres IDs d'affiliation.
 // `affiliate: true` marque un lien de monétisation (affiliation).
+// Programmes gratuits a rejoindre : Amazon Partenaires, Skillshare, Booking.com
+// affiliates, AliExpress_PORTAL, Temu Affiliate, TopCashback, Ko-fi.
 window.LINKS = [
   {
-    label: "🎁 Mon code promo Amazon",
-    url: "https://www.amazon.fr/?tag=VOTRE_ID_AFFILIATION",
+    label: "🛒 Amazon (mes coups de coeur)",
+    url: "https://www.amazon.fr/?tag=VOTRE_ID_AMAZON",
     affiliate: true,
   },
   {
-    label: "💡 Rejoindre Skillshare (essai gratuit)",
-    url: "https://skillshare.eqcm.net/VOTRE_ID",
+    label: "📚 Essai gratuit Skillshare",
+    url: "https://skillshare.eqcm.net/VOTRE_ID_SKILLSHARE",
+    affiliate: true,
+  },
+  {
+    label: "✈️ Booking.com (hotels)",
+    url: "https://www.booking.com/index.html?aid=VOTRE_ID_BOOKING",
+    affiliate: true,
+  },
+  {
+    label: "🛍️ AliExpress (bons plans)",
+    url: "https://sale.aliexpress.com/_VOTRE_ID_ALIEXPRESS",
+    affiliate: true,
+  },
+  {
+    label: "💸 Cashback TopCashback",
+    url: "https://www.topcashback.fr/VOTRE_ID_TOPCASHBACK",
     affiliate: true,
   },
   {

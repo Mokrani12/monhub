@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculateur de budget — MonHub</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">← Retour</a>
+    <h1>💰 Calculateur d'épargne</h1>
+    <label for="income">Revenu mensuel (€)</label>
+    <input id="income" type="number" value="2000" />
+    <label for="expenses">Dépenses mensuelles (€)</label>
+    <input id="expenses" type="number" value="1500" />
+    <label for="months">Durée (mois)</label>
+    <input id="months" type="number" value="12" />
+    <button id="gen">Calculer</button>
+    <div class="result" id="out"></div>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $("gen").addEventListener("click", () => {
+      const inc = +$("income").value || 0;
+      const exp = +$("expenses").value || 0;
+      const m = Math.max(1, +$("months").value || 1);
+      const perMonth = inc - exp;
+      const total = perMonth * m;
+      $("out").textContent =
+        `Épargne par mois : ${perMonth} €\nTotal sur ${m} mois : ${total} €`;
+    });
+  </script>
+</body>
+</html>

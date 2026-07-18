@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur de QR code — MonHub</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">← Retour</a>
+    <h1>📱 Générateur de QR code</h1>
+    <label for="text">Texte ou URL</label>
+    <input id="text" type="text" placeholder="https://votre-lien.com" />
+    <button id="gen">Générer</button>
+    <div class="result" style="text-align:center">
+      <div id="out"></div>
+    </div>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $("gen").addEventListener("click", () => {
+      const v = encodeURIComponent($("text").value.trim());
+      if (!v) return;
+      $("out").innerHTML =
+        `<img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${v}" alt="QR" />`;
+    });
+  </script>
+</body>
+</html>
