@@ -5,27 +5,27 @@
 window.LINKS = [
   {
     label: "🛒 Amazon (mes coups de coeur)",
-    url: "https://www.amazon.fr/?tag=VOTRE_ID_AMAZON",
+    url: "https://www.amazon.fr/",
     affiliate: true,
   },
   {
     label: "📚 Essai gratuit Skillshare",
-    url: "https://skillshare.eqcm.net/VOTRE_ID_SKILLSHARE",
+    url: "https://www.skillshare.com/",
     affiliate: true,
   },
   {
     label: "✈️ Booking.com (hotels)",
-    url: "https://www.booking.com/index.html?aid=VOTRE_ID_BOOKING",
+    url: "https://www.booking.com/",
     affiliate: true,
   },
   {
     label: "🛍️ AliExpress (bons plans)",
-    url: "https://sale.aliexpress.com/_VOTRE_ID_ALIEXPRESS",
+    url: "https://www.aliexpress.com/",
     affiliate: true,
   },
   {
     label: "💸 Cashback TopCashback",
-    url: "https://www.topcashback.fr/VOTRE_ID_TOPCASHBACK",
+    url: "https://www.topcashback.fr/",
     affiliate: true,
   },
   {
