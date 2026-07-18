@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur de bio-link — MonHub</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">← Retour</a>
+    <h1>🔗 Générateur de bio-link</h1>
+    <label for="name">Nom affiché</label>
+    <input id="name" type="text" placeholder="Votre Nom" value="Votre Nom" />
+    <label for="bio">Bio</label>
+    <input id="bio" type="text" placeholder="Votre description" />
+    <label for="links">Liens (un par ligne : Texte | URL)</label>
+    <textarea id="links">YouTube | https://youtube.com/@votrechaine
+Instagram | https://instagram.com/votrecompte</textarea>
+    <button id="gen">Générer le HTML</button>
+    <div class="result" id="out"></div>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    $("gen").addEventListener("click", () => {
+      const name = $("name").value.trim() || "Votre Nom";
+      const bio = $("bio").value.trim();
+      const items = $("links").value.split("\n").map(l => l.split("|")).filter(p => p[1]);
+      const html = `<h1>${name}</h1>\n<p>${bio}</p>\n` +
+        items.map(([t, u]) => `<a href="${u.trim()}" target="_blank" rel="noopener">${t.trim()}</a>`).join("\n");
+      $("out").textContent = html;
+    });
+  </script>
+</body>
+</html>

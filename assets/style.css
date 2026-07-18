@@ -1,0 +1,70 @@
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --accent: #6c5ce7;
+  --text: #e8e8ef;
+  --muted: #9aa0b4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.container { width: 100%; max-width: 520px; }
+
+.profile { text-align: center; margin-bottom: 28px; }
+.avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: var(--accent); margin: 0 auto 12px;
+}
+.profile h1 { font-size: 1.5rem; font-weight: 700; }
+.profile p { color: var(--muted); margin-top: 6px; font-size: 0.95rem; }
+
+.links { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.link-btn {
+  display: block; text-align: center; text-decoration: none;
+  background: var(--card); color: var(--text);
+  padding: 14px 18px; border-radius: 14px; font-weight: 600;
+  border: 1px solid #262a36; transition: transform .15s, border-color .15s;
+}
+.link-btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+
+.tools h2 { font-size: 1.1rem; margin-bottom: 14px; }
+.tool-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.tool-card {
+  display: block; text-decoration: none; color: var(--text);
+  background: var(--card); padding: 14px 16px; border-radius: 12px;
+  border: 1px solid #262a36; font-weight: 500;
+}
+.tool-card:hover { border-color: var(--accent); }
+
+.footer { text-align: center; color: var(--muted); margin-top: 32px; font-size: 0.85rem; }
+
+/* Tool pages */
+.tool-page { max-width: 640px; }
+.tool-page h1 { font-size: 1.4rem; margin-bottom: 16px; }
+.tool-page label { display: block; color: var(--muted); margin: 14px 0 6px; }
+.tool-page input, .tool-page textarea, .tool-page select {
+  width: 100%; background: var(--card); color: var(--text);
+  border: 1px solid #262a36; border-radius: 10px; padding: 12px;
+  font-size: 1rem; font-family: inherit;
+}
+.tool-page textarea { min-height: 120px; resize: vertical; }
+.tool-page button {
+  margin-top: 16px; background: var(--accent); color: #fff; border: 0;
+  padding: 12px 20px; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer;
+}
+.tool-page button:hover { opacity: .9; }
+.back-link { display: inline-block; margin-bottom: 18px; color: var(--accent); text-decoration: none; }
+.result {
+  margin-top: 18px; background: var(--card); border: 1px solid #262a36;
+  border-radius: 10px; padding: 14px; white-space: pre-wrap; word-break: break-word;
+}

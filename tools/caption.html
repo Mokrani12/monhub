@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur de captions — MonHub</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../index.html">← Retour</a>
+    <h1>📝 Générateur de captions</h1>
+    <label for="topic">Sujet</label>
+    <input id="topic" type="text" placeholder="Ex : conseils productivité" />
+    <label for="tone">Ton</label>
+    <select id="tone">
+      <option value="motivant">Motivant</option>
+      <option value="fun">Fun</option>
+      <option value="pro">Pro</option>
+    </select>
+    <label for="hash">Hashtags (séparés par des espaces)</label>
+    <input id="hash" type="text" value="productivité motivation conseils" />
+    <button id="gen">Générer</button>
+    <div class="result" id="out"></div>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const templates = {
+      motivant: (t) => `🔥 ${t} : commencez aujourd'hui, votre futur vous remerciera. Un petit pas chaque jour fait la différence !`,
+      fun: (t) => `😎 ${t} mais sans prise de tête… faut juste se lancer ptdr`,
+      pro: (t) => `${t} — 3 points clés : 1) planifiez, 2) exécutez, 3) mesurez. La constance bat l'intensité.`,
+    };
+    $("gen").addEventListener("click", () => {
+      const topic = $("topic").value.trim() || "votre sujet";
+      const tone = $("tone").value;
+      const tags = $("hash").value.trim().split(/\s+/).filter(Boolean).map(h => "#" + h.replace(/^#/, "")).join(" ");
+      const caption = templates[tone](topic) + "\n\n" + tags;
+      $("out").textContent = caption;
+    });
+  </script>
+</body>
+</html>
