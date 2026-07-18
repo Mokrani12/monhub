@@ -4,28 +4,28 @@
 // affiliates, AliExpress_PORTAL, Temu Affiliate, TopCashback, Ko-fi.
 window.LINKS = [
   {
-    label: "🛒 Amazon (mes coups de coeur)",
-    url: "https://www.amazon.fr/",
+    label: "🛒 Amazon Partenaires (rejoindre)",
+    url: "https://affiliate-program.amazon.fr/",
     affiliate: true,
   },
   {
-    label: "📚 Essai gratuit Skillshare",
-    url: "https://www.skillshare.com/",
+    label: "📚 Skillshare Affiliates (rejoindre)",
+    url: "https://www.skillshare.com/affiliates",
     affiliate: true,
   },
   {
-    label: "✈️ Booking.com (hotels)",
-    url: "https://www.booking.com/",
+    label: "✈️ Booking Partners (rejoindre)",
+    url: "https://www.booking.com/affiliate-program/",
     affiliate: true,
   },
   {
-    label: "🛍️ AliExpress (bons plans)",
-    url: "https://www.aliexpress.com/",
+    label: "🛍️ AliExpress Portal (rejoindre)",
+    url: "https://portals.aliexpress.com/",
     affiliate: true,
   },
   {
-    label: "💸 Cashback TopCashback",
-    url: "https://www.topcashback.fr/",
+    label: "💸 TopCashback (rejoindre)",
+    url: "https://www.topcashback.fr/affiliate",
     affiliate: true,
   },
   {
