@@ -1,4 +1,4 @@
-// Liste des codes premium valides. Ajoutez vos codes ici (ceux que vous vendez).
+// Codes premium fixes (optionnels). Les codes générés (PREMIUM-XXXXXX) sont aussi acceptés.
 const PREMIUM_CODES = [
   "PREMIUM-2024",
   "MONHUB-VIP",
@@ -6,6 +6,12 @@ const PREMIUM_CODES = [
 ];
 
 const KEY = "monhub_premium";
+
+function isValidCode(code) {
+  if (PREMIUM_CODES.includes(code)) return true;
+  // Accepte tout code au format PREMIUM-XXXXXX (généré par tools/codegen.html)
+  return /^PREMIUM-[A-Z2-9]{6}$/.test(code);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const premium = document.getElementById("premium");
@@ -19,13 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btn.addEventListener("click", () => {
     const code = (input.value || "").trim().toUpperCase();
-    if (PREMIUM_CODES.includes(code) || localStorage.getItem(KEY) === "1") {
+    if (isValidCode(code) || localStorage.getItem(KEY) === "1") {
       localStorage.setItem(KEY, "1");
       premium.style.display = "block";
       msg.style.display = "none";
     } else {
       msg.style.display = "block";
-      msg.textContent = "Code invalide. Contactez le vendeur pour obtenir un accès.";
+      msg.textContent = "Code invalide. Achetez un accès pour obtenir un code.";
     }
   });
 });
